@@ -1,0 +1,157 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Taviraj', serif;
+  background: linear-gradient(to bottom, #001f24, #152d32);
+  color: #f7f7f7;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+
+/* Header */
+header {
+  position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid #444;
+  font-family: 'Revalia', sans-serif;
+  background: linear-gradient(to right, #052d0a, #0f4539);
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/wave.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.2; /* Low opacity for subtle effect */
+  z-index: 0;
+}
+
+header h1,
+header p {
+  position: relative;
+  z-index: 1;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  color: #ecf0f1;
+}
+
+
+
+
+/* Section Styling */
+section {
+  padding: 3rem 8%;
+  border-bottom: 1px solid #444;
+  margin-bottom: 2rem;
+}
+
+/* ————— Regular Headings (non-linked) ————— */
+h2:not(.link-heading) {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4aa3df;
+  font-family: 'Faculty Glyphic', serif;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to right, #ff7f00, #6a0dad);
+  border-image-slice: 1;
+}
+
+/* ————— “Download My CV” Heading as Link ————— */
+/* HTML: <h2 class="link-heading"><a href="cv.pdf" target="_blank">Download My CV</a></h2> */
+
+h2.link-heading {
+  /* ensure it sits nicely in flow */
+  margin-bottom: 1rem;
+}
+
+h2.link-heading a {
+  font-size: 2rem;
+  color: #4aa3df;
+  font-family: 'Faculty Glyphic', serif;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 3px solid transparent;
+  border-image: linear-gradient(to right, #ff7f00, #6a0dad);
+  border-image-slice: 1;
+  text-decoration: none;          /* no underline */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+h2.link-heading a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: scale(1.03);
+}
+
+/* Paragraphs and Lists */
+p, li {
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: #d0d0d0;
+  font-weight: bold;
+}
+ul {
+  padding-left: 1.5rem;
+  list-style-type: square;
+}
+
+/* Images */
+.profile-img, .local-img {
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  margin: 1rem auto;
+}
+.local-img {
+  height: 180px;
+  width: auto;
+  margin: 1rem 1rem 1rem 0;
+  object-fit: cover;
+}
+.local-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #152d32;
+  color: #888;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}

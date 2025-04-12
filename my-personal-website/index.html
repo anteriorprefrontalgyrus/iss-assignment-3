@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sahishnu Pawan Kumar - Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Revalia&family=Taviraj:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Personal Website</h1>
+    <p>Built using CSS, HTML and JS (JavaScript)</p>
+  </header>
+
+  
+  <script src="interaction-logger.js"></script>
+  <script src="analyseText.js"></script>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      To those who for some reason want to read this website, <a  href="https://rb.gy/j4zkyb" target="_blank">this link to a video</a> where I explain the basics of RestfulAPIs may be interesting!
+      <br><br>
+      <u>Some things about myself:</u>
+      <br><br>
+      I support Liverpool Football Club
+      <br><br>
+      I am an avid cyclist and a (very) amateur chess player
+      <br><br>
+      I want to pursue a career in neuroscience, particularly to do with breakthrough technological devices related to that field.
+      <br><br>
+    </p>
+    <img src="images/profilepicture.jpg" alt="Me" class="profile-img">
+  </section>
+
+  <section id="birthplace">
+    <h2>My Birthplace - MYSORE</h2>
+    <p>Here are some pictures from Mysore. Although I was born here, I spent most of my life in Cardiff, Wales after moving at 3 months. The fourth picture is of a bridge near my house there.</p>
+    <div class="local-images-container">
+      <img src="images/birthplaceimage1.jpg" alt="Mysore Palace" class="local-img">
+      <img src="images/birthplaceimage2.webp" alt="Chamundi Temple" class="local-img">
+      <img src="images/birthplaceimage3.jpg" alt="Kukkarahalli Lake" class="local-img">
+      <img src="images/homeimage4.jpg" alt="Grangetown Link" class="local-img">
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education & Achievements</h2>
+    <ul>
+      <li><strong>Schooling:</strong> Westbourne School; The Learning Curve International School</li>
+      <li><strong>University:</strong> IIIT Hyderabad</li>
+      <li><strong>Achievements:</strong> Won UK Maths Olympiad in Grades 5 and 6, recieved certificate for Highest French Grade in India for GCSEs, finalist of Karnataka French Spelling Bee </li>
+      <li><strong>Never lost a bet that I've won</strong></li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript – Intermediate</li>
+      <li>C, C++ – Low</li>
+      <li>Python – Low</li>
+      <li>Git, GitHub – Intermediate</li>
+      <li>LaTeX – Not my style</li>
+      <li>MS Excel, Word - Comfortable</li>
+    </ul>
+  </section>
+
+  <section id="cv">
+    <h2 class="link-heading">
+    <a href="Sahishnu_Pawan_Kumar_CV.pdf" target="_blank">Download My CV</a>
+  </h2>
+  </section>
+
+  <div style="
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+">
+
+<h2 style="color: #ffffff;">Text Analyser</h2>
+
+<!-- 🌌 Dark-themed Textarea -->
+<textarea id="textInput" rows="20" cols="100" placeholder="Go crazy!"
+  style="
+    width: 100%;
+    max-width: 900px;
+    padding: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    resize: vertical;
+    font-family: 'Taviraj', sans-serif; /* Font for input text */
+  ">
+</textarea>
+
+<br><br>
+
+<!-- 🖤 Analyze Button -->
+<button onclick="analyzeText()" style="
+    padding: 15px 30px; /* Increased padding for larger button */
+    font-size: 1.2rem;  /* Slightly larger font size */
+    font-weight: bold;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Faculty Glyphic', serif; /* Font for button */
+    box-shadow: 0 0 10px rgba(0, 122, 204, 0.8), 0 0 20px rgba(0, 122, 204, 0.5); /* Glowing effect */
+    transform: scale(1); /* Default scale */
+  "
+  onmouseover="this.style.backgroundColor='#005fa3'; this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 15px rgba(0, 122, 204, 1), 0 0 25px rgba(0, 122, 204, 0.6)';"
+  onmouseout="this.style.backgroundColor='#007acc'; this.style.transform='scale(1)'; this.style.boxShadow='0 0 10px rgba(0, 122, 204, 0.8), 0 0 20px rgba(0, 122, 204, 0.5)';">
+  Analyse Text
+</button>
+
+
+<!-- 📄 Output Display -->
+<div id="resultContainer" style="display: none;">
+  <div id="result" style="
+    margin-top: 25px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-left: 4px solid #007acc;
+    padding: 25px 30px;
+    max-width: 1200px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.35);
+    font-family: 'Taviraj', serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    box-sizing: border-box;
+  ">
+    <!-- General Count -->
+    <div>
+      <h3 style="color: #ffffff; font-size: 1.05rem; margin: 0 0 6px;">📊 General</h3>
+      <p id="generalCount" style="font-size: 1rem; margin: 0;"></p>
+    </div>
+
+    <!-- Pronouns -->
+    <div>
+      <h3 style="color: #ffffff; font-size: 1.05rem; margin: 0 0 6px;">👤 Pronouns</h3>
+      <p id="pronounCount" style="font-size: 1rem; margin: 0;"></p>
+    </div>
+
+    <!-- Prepositions -->
+    <div>
+      <h3 style="color: #ffffff; font-size: 1.05rem; margin: 0 0 6px;">🔗 Prepositions</h3>
+      <p id="prepositionCount" style="font-size: 1rem; margin: 0;"></p>
+    </div>
+
+    <!-- Indefinite Articles -->
+    <div>
+      <h3 style="color: #ffffff; font-size: 1.05rem; margin: 0 0 6px;">🔍 Indefinite Articles</h3>
+      <p id="indefiniteCount" style="font-size: 1rem; margin: 0;"></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<footer style="
+  margin-top: 50px;
+  font-size: 0.75rem;
+  color: #888;
+  text-align: center;
+  font-family: 'Taviraj', sans-serif;
+">
+  <p>© 2025 Sahishnu Pawan Kumar</p>
+</footer>
+
+</body>
+</html>
